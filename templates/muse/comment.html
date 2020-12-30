@@ -1,0 +1,25 @@
+<!-- comment -->
+<div class = "commentDiv">
+<ul>
+	<li><a href = "{% url 'userPage' user_id=comment.user.id %}" class = "projectDescriptor projectNameLink">{{comment.user.username}}</a></li>
+	{% if comment.text %}
+		<li><p class = "projectDescriptor">{{comment.text}}</p></li>
+	{% endif %}
+	{% if comment.audio %}
+		<li><div class="music_player">
+			<audio controls preload="metadata">
+				<source  type="audio/mpeg" src={{comment.audio.url}}>
+				Music is not supported by your browser
+			</audio>
+		</div></li>
+	{% endif %}
+	{% if canEdit %}
+		<li><form class="comment_delete_form" method="post" action="{% url 'deleteComment' comment_id=comment.id project_name_slug=comment.project.slug %}" enctype="multipart/form-data">
+		
+		{% csrf_token %}
+		
+		<input type="submit" class="submit" name="submit" value="Delete"/>
+		</form></li>
+	{% endif %}
+</ul>
+</div>

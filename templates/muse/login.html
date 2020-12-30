@@ -1,0 +1,18 @@
+{% extends 'muse/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %}Login{% endblock %}
+{% block page_title %}Login to Muse{% endblock %}
+
+{% block content %}
+<div>
+<form id="login_form" method="post" action="{% url 'login' %}">
+	{% csrf_token %}
+	<table>
+	{{ form.as_table }}
+	</table>
+	<input class="submit" type="submit" value="Login" />
+</form>
+</div>
+{% endblock %}

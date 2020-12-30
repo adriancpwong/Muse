@@ -1,0 +1,22 @@
+{% extends "muse/base.html" %}
+
+{% block title_block %}New Project{% endblock %}
+{% block page_title %}Create your new project{% endblock %}
+
+{% block content %}
+
+	<div>
+		<form id="project_form" method="post" action="{% url 'newProject' %}" enctype="multipart/form-data">
+		
+		{% csrf_token %}
+		<table>
+		{{ projectForm.as_table}}
+		</table>
+		<p class = "projectDescriptor">Add your notations below</p>
+		<table>
+		{{ FileFormSet }}
+		</table>
+		<input type="submit" class="submit" name="Create" value="Create"/>
+		</form>
+	</div>
+{% endblock %}

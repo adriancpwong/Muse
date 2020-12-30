@@ -1,0 +1,19 @@
+all views to have at least - context "SignedIn":true/false, "Username":username, "Userslug":username_slug 
+
+about(request) - loads about page - render muse/about.html
+home(request) - loads homepage - render muse/home.html
+projectPage(request, project_name_slug) - loads a project page or deletes it - render muse/projectView.html - context "Project":MusicProject, "commentForm":newCommentForm - check user is author before deletion
+userPage(request, username_slug) - loads user's page or deletes user and returns them to home- render muse/accountPage.html - check user is the correct user before deletion
+newProjectPage(request) - loads a form to create a project and accepts new projects - render ? - context "projectForm":newMusicProjectForm
+signUp(request) - loads signUp form and registers new users - render ?
+signIn(request) - loads login form or logs a user in - render ?
+
+projectPreviews(request) - returns a list of project previews - url variables 'owned','number' - if owned only return projects by logged in user, return number projects - only return 'name', 'author', 'genre', 'description' for each project - use JsonResponse(context) instead of render - context "ProjectPreviews":projects
+
+comments(request, project_name_slug) - returns all comments for a project and accepts new comments and deletes comments - JsonResponse(context) - context "projectAuthor":project_author_username_slug, "comments":comments - check comment is either owned by user or attached to project owned by user before deletion
+
+notes 
+- to get url variables use: urlVariable = request.GET.get('variableName')
+- to get only some fields of a project use MusicProjects.objects.only('name', 'author', 'genre', description')
+- JsonResponse returns a JSON object rather than html and is used to do AJAX.
+- do deletions if (request.method == "DELETE"):

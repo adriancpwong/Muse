@@ -1,0 +1,17 @@
+{% extends "muse/base.html" %}
+
+{% load staticfiles %}
+
+{% block title_block %}Home{% endblock %}
+{% block page_title %}Home{% endblock %}
+
+{% block content %}
+<div>
+<div>
+<img id="homeLogo" src={% static "images/musesymbol.png" %} alt="MUSE logo" />
+<p id="homeText" class="projectDescriptor">Welcome To Muse</br>
+A place to share your musical ideas</p>
+</div>
+{% include "muse/projectPreviews.html" %}
+</div>
+{% endblock %}

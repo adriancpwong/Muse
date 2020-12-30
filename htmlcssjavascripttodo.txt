@@ -1,0 +1,44 @@
+create pages
+	homepage - finish getting Javascript to request projectPreviews
+	signup - use form - do from book
+	login - use form - do from book
+	accountpage - finish getting Javascript to request projectPreviews - implement button functionality
+	projectpage - get music files from server - add delete button and functionality
+	createnewprojectpage - use form - more complicated
+	about - think of stuff to write in this section
+	
+AJAX functionality
+	dynamic loading of project previews - change method to use login to let users login
+	dynamic loading of comments - add delete option
+	deleting projects - add button at bottom with check to delete if logged in and own project
+	deleting comments - add button on comments with check to delete if own project or comment
+	adding comments - add new comment for mto bottom of project page
+	searching projects - implement if time
+
+CSS styling
+	homepage
+	signup
+	login
+	accountpage
+	projectpage
+	createnewprojectpage
+	about
+	
+Javascript
+
+Views
+	Create new project
+	Delete project - check user owns project
+	Edit project - check user owns project
+	Add new comment
+	Delete comment - check if user owns comment ot project
+
+Database
+	create projects
+	create comments
+	create users
+	create file objects
+	
+Cookies
+	Session stuff to check logged in and username
+	

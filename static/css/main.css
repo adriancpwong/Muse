@@ -1,0 +1,197 @@
+body{
+	color: #505050;
+	}
+
+div {
+	background-color: #88C8FF;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	border: 1px solid #505050;
+	overflow: hidden;
+	border-radius: 20px;
+	}
+
+audio{
+	background-color: #888888;
+}
+
+hr { border: none;
+	height: 2px;
+	color: #505050;
+	background-color: #505050;
+	clear: left;}
+	
+ul { list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	width: 100%;
+	
+}
+	
+input[type=submit], button, a{
+	background-color:#FFFFFF;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid #505050;
+	border-radius:10px;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center; 
+	text-decoration: none;
+	color: #000000;
+}
+
+input[type=submit]:hover, button:hover, a:hover{
+	background-color:#88C8FF;
+}
+	
+form table{
+	border-spacing: 5px;
+	border-collapse: separate;
+}
+
+form table tbody tr{
+	background-color: #FFFFFF;
+	border: 1px solid #505050;
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 10px 10px 10px 10px;}
+	
+form table tbody tr th{
+	vertical-align: text-top;
+	border: 1px solid #505050;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	padding: 5px 5px 5px 5px;
+	margin-right: 10px;}
+
+form table tbody tr td{
+	border: 1px solid #505050;
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	padding: 5px 5px 5px 5px;}
+	
+form input[type=submit]{
+	padding: 5px 5px 5px 5px;
+	min-width: 100px;
+	
+}
+#homeLogo{
+	float: left;	
+	height: 190;
+	width: 200;
+}
+
+#homeText{
+	
+}
+
+#headerLogo{
+	float: left;
+}
+
+#footer{
+	position: relative;
+	height: 40px;
+}
+#header{
+	position: relative;
+}
+
+#header a{
+	background-color:transparent;
+	padding: 0px 0px 0px 0px;
+	border: none;
+	border-radius:0px;
+	color: transparent;
+}
+
+#sidebar{
+	
+	float: left;
+}
+
+#sidebar button, #sidebar a, #sidebar input{
+	min-width: 150px;
+	width: 100%;
+	padding: 5px 0px 5px 0px;
+}
+
+#comments{
+	background-color: #FFFFFF;
+	display: none;
+}
+
+#contentBlock{
+	background-color: transparent;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border: none;
+	overflow: hidden;
+	
+}
+
+#projectPreviews{
+	background-color: #FFFFFF;
+}
+
+.projectPreviewAccessButtons{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.projectDescriptor{
+	background-color: #FFFFFF;
+	padding: 5px 10px 5px 10px;
+	border-radius: 20px;
+	border: 1px solid #505050;
+	margin: 5px 10px 5px 10px;
+	width: auto;
+	display: inline-block;
+}
+
+.projectNameLink{
+	font-size: 150%;
+}
+
+.otherFiles{
+	background-color: #FFFFFF;
+	padding: 5px 5px 5px 5px;
+	display: inline-block;
+}
+
+.fileTypeLabel{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 10px;
+}
+
+.otherFileLink{
+	display: inline-block;
+	background-color: #FFFFFF;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 10px 5px 10px;
+	border-radius: 20px;
+	border: 1px solid #505050;
+}
+.otherFile{
+	text-align:center;
+}
+.music_player{
+	background-color: #FFFFFF;
+	display: inline-block;
+}
+
+.comment{
+	background-color: #70A0FF;
+}
+.comment h3{
+	background-color: #FFFFFF;
+	border: 1px solid #505050;
+}
+.comment p{
+	background-color: #FFFFFF;
+	border: 1px solid #505050;
+}

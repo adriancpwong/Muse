@@ -1,0 +1,25 @@
+{# needs accountId #}
+{% load staticfiles %}
+<script src={% static "javascript/accountFunctions.js" %} ></script>
+<div id="sidebar">
+<ul>
+	<!-- Account Panel -->
+	<li><a href="{% url 'home' %}">Home</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	{% if user.is_authenticated %}
+	<li><a href="{% url 'userPage' user_id=user.id %}"> {{user.username}}'s Page</a></li>
+	<li><a href="{% url 'logout' %}">Sign Out</a></li>
+	<li><a href="{% url 'newProject' %}">
+		Create New Project
+	</a></li>
+	<li><a href="{% url 'changePassword' %}">Change Password</a></li>
+	<li><form id="delete_user_form" method="post" action="{% url 'deleteUser' %}" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="submit" value = "Delete Account">
+	</input></form></li>
+	{% else %}
+	<li><a href="{% url 'login' %}">Sign In</a></li>
+	<li><a href="{% url 'register' %}">Sign Up</a></li>
+{% endif %}
+</ul>
+</div>

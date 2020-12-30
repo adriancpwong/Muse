@@ -1,0 +1,27 @@
+{% extends 'muse/base.html' %}
+
+{% load staticfiles %}
+
+{% block title_block %}Register{% endblock %}
+{% block page_title %}Register for Muse{% endblock %}
+
+{% block content %}
+
+	<div>
+	{% if registered %}
+		<a href="{% url 'index' %}">Return to the homepage.</a>
+		<br/>
+	
+	{% else %}
+		<form id="user_form" method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+		
+		{% csrf_token %}
+		<table>
+		{{ user_form.as_table}}
+		</table>
+		<input type="submit" class="submit" name="submit" value="Register"/>
+		</form>
+
+	{% endif %}
+	</div>
+{% endblock %}

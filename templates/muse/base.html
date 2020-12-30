@@ -1,0 +1,31 @@
+<! DOCTYPE html >
+{% load staticfiles %}
+
+<html>
+	<head lang="en">
+		<meta charset="UTF-8" />
+		<title>
+			MUSE - 
+			{% block title_block %}
+				Musical Inspiration!
+			{% endblock %}
+		</title>
+		<link rel="icon" sizes="48x48" href={% static "images/musesmall.ico" %} />
+		<link rel="stylesheet" type="text/css" href={% static "css/main.css" %} />
+		
+	</head>
+	<body>
+	{% include "muse/header.html" %}
+	<hr />
+	{% include "muse/accountPanel.html" %}
+	<div id="contentBlock">
+	<h1>{% block page_title %}Be Inspired!{% endblock %}</h1>
+	{% include "muse/message.html" %}
+	{% block content %}
+	{% endblock %}
+	</div>
+	<hr />
+	{% include "muse/footer.html" %}
+	</body>
+</html>
+

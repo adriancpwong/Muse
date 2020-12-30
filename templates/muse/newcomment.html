@@ -1,0 +1,11 @@
+<!-- new comment form -->
+<div class = "newCommentDiv">
+	<!-- <h3 class = "projectDescriptor">New comment</h3> -->
+	<form id="comment_form" method="post" action="{% url 'newComment' project_name_slug=Project.slug%}" enctype="multipart/form-data">
+	{% csrf_token %}
+		<table>
+		{{ commentForm.as_table}}
+		</table>
+		<input type="submit" class="submit" name="Create" value="Add comment"/>
+	</form>
+</div>

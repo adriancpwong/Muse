@@ -1,0 +1,47 @@
+{% extends "muse/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<ul>
+<li><div id = "projectView">
+<ul>
+	<li><a href = "{% url 'projectPage' project_name_slug=Project.slug %}" class = "projectDescriptor projectNameLink">{{Project.name}}</a></li>
+	<li><a href = "{% url 'userPage' user_id=Project.user.id %}"class = "projectDescriptor">Author: {{Project.user.username}}</a></li>
+	<li><p class = "projectDescriptor">Genre: {{Project.genre}}</p></li>
+	<li><p class = "projectDescriptor">{{Project.PageDescription}}</p></li>
+</ul>
+		{% if Project.musicFile %}
+			<div class="music_player">
+			<audio controls preload="metadata">
+				<source src={{Project.musicFile.url}} type="audio/mpeg">
+				Music is not supported by your browser
+			</audio>
+			</div>
+		{% endif %}
+		{% if ExtraFiles %}
+			<div class = "otherFiles">
+			{% for file in ExtraFiles %}
+			<div class = "otherFile">
+			<p class = "projectDescriptor">Notation: {{ file.name }}</p>
+			<a href = {{file.extra.url}} class = "projectDescriptor otherFileLink">{{file.extra.name}}</a>
+			</div>
+			{% endfor %}
+			</div>
+		{% endif %}
+		{% if user.id == Project.user.id %}
+			<form id="delete_project_form" method="post" action="{% url 'deleteProject' project_name_slug=Project.slug %}" enctype="multipart/form-data">
+				{% csrf_token %}
+				<input type="submit" value = "Delete Project"></input>
+			</form>
+		{% endif %}
+</div></li>
+
+
+<li>{% include "muse/comments.html" %}</li>
+{% if user.is_authenticated %}
+<li>{% include "muse/newcomment.html" %}</li>
+{% endif %}
+</ul>
+
+{% endblock %}
